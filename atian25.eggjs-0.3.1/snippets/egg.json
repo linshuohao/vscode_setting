@@ -1,0 +1,33 @@
+{
+  "config": {
+    "prefix": "egg config",
+    "body": [
+      "'use strict';",
+      "",
+      "module.exports = appInfo => {",
+      "  const config = {};",
+      "",
+      "  /**",
+      "   * @member Config#$1",
+      "   * @property {String} ${2:KEY} - ${3:description}",
+      "   */",
+      "  config.$1 = {",
+      "    $0",
+      "  };",
+      "",
+      "  return config;",
+      "};",
+      ""
+    ]
+  },
+  "plugin": {
+    "prefix": "egg plugin",
+    "body": [
+      "exports.$1 = {",
+      "  enable: true,",
+      "  package: '$2',",
+      "};",
+      ""
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  // Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  "vue-js": {
+    "prefix": "vue",
+    "body": [
+      "<template>",
+      "  <div>$1</div>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "  name: '',",
+      "",
+      "  mixins: [],",
+      "",
+      "  components: {},",
+      "",
+      "  props: {},",
+      "",
+      "  data() { return {} },",
+      "",
+      "  computed: {},",
+      "",
+      "  watch: {},",
+      "",
+      "  created() {},",
+      "",
+      "  mounted() {},",
+      "",
+      "  destroyed() {},",
+      "",
+      "  methods: {},",
+      "};",
+      "</script>",
+      "",
+      "<style lang='$2' scoped>",
+      "</style>"
+    ],
+    "description": "vue js模板"
+  },
+  "vue-ts": {
+    "prefix": "vue-ts",
+    "body": [
+      "<template>",
+      "  <div></div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import { Component, Vue } from 'vue-property-decorator';",
+      "",
+      "@Component",
+      "export default class $1 extends Vue {",
+      "}",
+      "</script>",
+      "",
+      "<style lang='$2' scoped>",
+      "</style>"
+    ],
+    "description": "vue js模板"
+  },
+  "vue-composition": {
+    "prefix": "vue-composition",
+    "body": [
+      "<template>",
+      "  <div></div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import {  } from \"@vue/composition-api\";",
+      "",
+      "@Component",
+      "export default {",
+      "  setup(props, context) {",
+      "  }",
+      "}",
+      "</script>",
+      "",
+      "<style lang='$2' scoped>",
+      "</style>"
+    ],
+    "description": "vue js模板"
+  }
+}

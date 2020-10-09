@@ -1,0 +1,42 @@
+{
+    "Swagger_Annotation": {
+        "prefix": "swagger doc",
+        "body": [
+            "/**",
+            "* @summary $1",
+            "* @description $2",
+            "* @router ${3|get,post,put,delete,patch,head|} /${4}",
+            "* @request ${5|query,body,path,header,formData|} ${6|integer,string,boolean,number|} ${7:field_name} ${9:desc}",
+            "* @response ${10|200,201,202,203,204,205,206|} ${11|integer,string,boolean,number|} ${12:desc}",
+            "*/"
+        ],
+        "description": "swagger doc"
+    },
+    "Swagger_Controller": {
+        "prefix": "swagger controller",
+        "body": [
+            "/**",
+            "* @controller $1",
+            "*/"
+        ],
+        "description": "swagger controller"
+    },
+    "Swagger_Contract": {
+        "prefix": "swagger contract",
+        "body": [
+            "module.exports = {",
+            "  ${1:model}: {",
+            "    ${2:field}: { type: '${3|integer,string,boolean,number|}', required: ${4|true,false|}, example: '${5:ex}' },$0",
+            "  }",
+            "};"
+        ],
+        "description": "swagger contract"
+    },
+    "Swagger_Contract_Field": {
+        "prefix": "swagger contract field",
+        "body": [
+            "${1:field}: { type: '${2|integer,string,boolean,number|}', required: ${3|true,false|}, example: '${4:ex}' },$0"
+        ],
+        "description": "swagger contract field"
+    }
+}

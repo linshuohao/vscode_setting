@@ -1,0 +1,158 @@
+{
+	"name": "eggjs",
+	"displayName": "eggjs",
+	"description": "vscode extension for https://eggjs.org/",
+	"version": "0.3.1",
+	"publisher": "atian25",
+	"homepage": "https://github.com/eggjs/vscode-eggjs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/eggjs/vscode-eggjs.git"
+	},
+	"engines": {
+		"vscode": "^1.17.0"
+	},
+	"icon": "resources/eggjs.png",
+	"categories": [
+		"Languages",
+		"Debuggers",
+		"Snippets"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "eggjs options",
+			"properties": {
+				"eggjs.framework": {
+					"type": "string[]",
+					"default": [],
+					"description": "Additional framework names"
+				},
+				"eggjs.snippet.fnStyle": {
+					"type": [
+						"string",
+						"null"
+					],
+					"enum": [
+						"async",
+						"*"
+					],
+					"default": null,
+					"description": "Snippet function style"
+				},
+				"eggjs.sidebar.test": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show or hide the Test Explorer."
+				}
+			}
+		},
+		"views": {
+			"explorer": [
+				{
+					"id": "eggTest",
+					"name": "Egg Unit Test",
+					"when": "false"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "eggTest.refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "eggTest.runOnly",
+				"title": "run only",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "eggTest.toggle",
+				"title": "toggle(only/skip)",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "eggTest.refreshEntry",
+					"when": "view == eggTest",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "eggTest.runOnly",
+					"when": "view == eggTest"
+				},
+				{
+					"command": "eggTest.toggle",
+					"when": "view == eggTest"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/egg.json"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "Egg",
+				"label": "Egg",
+				"languages": [
+					"javascript",
+					"typescript"
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vspub": "vsce publish",
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"dependencies": {
+		"common-tags": "^1.4.0",
+		"egg-ast-utils": "^0.5.1",
+		"egg-utils": "^2.3.0",
+		"globby": "^6.1.0",
+		"is-type-of": "^1.2.0",
+		"lodash.get": "^4.4.2",
+		"mz": "^2.6.0",
+		"semver": "^5.4.1"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.32",
+		"@types/node": "^6.0.40",
+		"autod": "^2.10.1",
+		"mocha": "^2.3.3",
+		"typescript": "^2.0.3",
+		"vscode": "^1.0.0",
+		"vsce": "^1.31.1"
+	},
+	"license": "MIT",
+	"__metadata": {
+		"id": "274a34dc-5589-44f3-b3cb-b15d8e002ce4",
+		"publisherId": "1e5196fe-a588-413c-b56d-61a2a4a60d4a",
+		"publisherDisplayName": "atian25"
+	}
+}
